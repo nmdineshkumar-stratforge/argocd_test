@@ -1,5 +1,5 @@
 # filepath: /C:/Users/DineshKumarNarayanan/kubernetes/argocd/application/k8s/virtualservice.yaml
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
   name: python-test-app

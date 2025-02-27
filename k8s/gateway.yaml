@@ -1,14 +1,19 @@
-apiVersion: networking.istio.io/v1alpha3
+apiVersion: gateway.networking.k8s.io/v1
 kind: Gateway
 metadata:
   name: python-test-app-gateway
+  annotations:
+    networking.istio.io/service-type: ClusterIP
 spec:
-  selector:
-    istio: ingressgateway # use Istio's default ingress gateway
-  servers:
-  - port:
-      number: 80
-      name: http
-      protocol: HTTP
-    hosts:
-    - "python.example.net"
+  gatewayClassName: istio
+  listeners:
+  - allowedRoutes:
+      namespaces:
+        from: Same
+    name: http
+    port: 80
+    protocol: HTTP
+status:
+  addresses:
+  - type: Hostname
+    value: python.example.net
