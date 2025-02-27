@@ -1,19 +1,19 @@
-# filepath: /C:/Users/DineshKumarNarayanan/kubernetes/argocd/application/k8s/virtualservice.yaml
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
-  name: python-test-app
+  name: myapp-virtualservice
+  namespace: default
 spec:
   hosts:
-  - "python.example.net"
+  - "python.example.net" # Hostname for the external application
   gateways:
-  - python-test-app-gateway
+  - python-test-app-gateway # The gateway that will be used to route traffic
   http:
-    - match:
-        - uri:
-            prefix: /
-      route:
-        - destination:
-            host: python-test-app
-            port:
-              number: 80
+  - match:
+    - uri:
+        prefix: "/" # Route all traffic to the application
+    route:
+    - destination:
+        host: python-test-app # The name of the internal Kubernetes service
+        port:
+          number: 80 # The port on which the application is running
