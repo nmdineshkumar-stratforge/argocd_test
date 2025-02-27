@@ -8,12 +8,3 @@ spec:
   - "python.example.net"
   gateways:
   - python-test-app-gateway
-  http:
-  - match:
-    - uri:
-        prefix: "/"
-    route:
-    - destination:
-        host: python-test-app
-        port:
-          number: 8000
