@@ -1,0 +1,19 @@
+# filepath: /C:/Users/DineshKumarNarayanan/kubernetes/argocd/application/k8s/virtualservice.yaml
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: python-test-app
+spec:
+  hosts:
+  - "python.example.net"
+  gateways:
+  - python-test-app-gateway
+  http:
+  - match:
+    - uri:
+        prefix: "/"
+    route:
+    - destination:
+        host: python-test-app
+        port:
+          number: 80
