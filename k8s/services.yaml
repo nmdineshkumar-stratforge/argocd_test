@@ -6,5 +6,5 @@ spec:
   selector:
     app: python-app
   ports:
-     - port: 80
+     - port: 8000
        name: http
