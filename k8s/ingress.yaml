@@ -4,9 +4,6 @@ metadata:
   name: myingress
   labels:
     name: myingress
-  annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/ssl-passthrough: "true"
 spec:
   rules:
   - host: python.example.net
@@ -18,12 +15,8 @@ spec:
           service:
             name: python-test-app
             port: 
-              number: 443
+              number: 80
   tls:
   - hosts:
     - python.example.net
-    secretName: python-app-tls
-status:
-  loadBalancer:
-    ingress:
-      - ip: 10.10.7.32
+    secretName: my-app-cert-cdjtd
