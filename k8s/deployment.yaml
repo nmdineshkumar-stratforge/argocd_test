@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python-app
-        image: myfirst-py-app:latest
+        image: nmdineshkumar/myfirst-py-app:tagname
         resources:
           limits:
             memory: "128Mi"
