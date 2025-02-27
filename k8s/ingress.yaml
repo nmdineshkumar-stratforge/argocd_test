@@ -23,3 +23,7 @@ spec:
   - hosts:
     - python.example.net
     secretName: python-app-tls
+status:
+  loadBalancer:
+    ingress:
+      - ip: 10.10.7.32
