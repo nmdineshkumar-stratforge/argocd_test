@@ -4,7 +4,7 @@ metadata:
   name: python-app-certificate
   namespace: default
 spec:
-  secretName: example-tls
+  secretName: example-net-tls
   issuerRef:
     name: selfsigned-issuer
     kind: Issuer

@@ -23,4 +23,4 @@ spec:
     - "python.example.net" # The external hostname to access your app
     tls:
       mode: SIMPLE # Enable TLS termination on this gateway
-      credentialName: python-app-certificate # A Kubernetes Secret with the SSL certificate and key (must contain 'tls.crt' and 'tls.key' fields)
+      credentialName: example-net-tls # A Kubernetes Secret with the SSL certificate and key (must contain 'tls.crt' and 'tls.key' fields)
