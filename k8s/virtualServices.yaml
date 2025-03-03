@@ -16,4 +16,4 @@ spec:
     - destination:
         host: python-test-app # The name of the internal Kubernetes service
         port:
-          number: 80 # The port on which the application is running
+          number: 8000 # The port on which the application is running
